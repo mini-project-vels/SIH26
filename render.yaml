@@ -1,0 +1,21 @@
+services:
+  - type: web
+    name: satquery-ai-backend
+    env: python
+    # We set the root directory so Render knows where the app lives
+    rootDir: satquery-ai
+    buildCommand: pip install -r requirements.txt
+    startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
+    
+    # Optional: Automatically set environment variables based on your .env.example
+    envVars:
+      - key: HF_VISION_MODEL
+        value: "Qwen/Qwen2.5-VL-3B-Instruct:featherless-ai"
+      - key: HF_BASE_URL
+        value: "https://router.huggingface.co/v1"
+      - key: HF_TOKEN
+        sync: false # 'sync: false' means Render will ask you for this secret value securely in the dashboard
+      - key: COPERNICUS_CLIENT_ID
+        sync: false
+      - key: COPERNICUS_CLIENT_SECRET
+        sync: false
