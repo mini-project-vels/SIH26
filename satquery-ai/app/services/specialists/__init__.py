@@ -1,0 +1,5 @@
+# Expose specialist services
+from app.services.specialists.building_specialist import BuildingSegmentationService
+from app.services.specialists.water_specialist import WaterSegmentationService
+from app.services.specialists.road_specialist import RoadSegmentationService
+from app.services.specialists.land_cover_specialist import LandCoverSegmentationService

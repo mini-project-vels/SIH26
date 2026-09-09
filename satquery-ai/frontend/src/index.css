@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+@theme {
+  /* Custom Oceanic Scale from User Palette -> Mapped to Professional Slate */
+  --color-ocean-950: #020617;
+  --color-ocean-900: #0f172a;
+  --color-ocean-800: #1e293b;
+  --color-ocean-700: #334155;
+  --color-ocean-600: #475569;
+  --color-ocean-500: #64748b;
+  --color-ocean-400: #94a3b8;
+  --color-ocean-300: #cbd5e1;
+  --color-ocean-200: #e2e8f0;
+  --color-ocean-100: #f1f5f9;
+  --color-ocean-50: #f8fafc;
+
+  /* Global Mapped Base */
+  --color-navy: var(--color-ocean-900);
+  --color-navy-dark: var(--color-ocean-950);
+
+  /* Cinematic accents */
+  --color-accent-green: #3ADE7A;
+  --color-accent-blue: var(--color-ocean-500);
+
+  /* Cinematic text */
+  --color-neutral-light: var(--color-ocean-50);
+  --color-neutral-dark: var(--color-ocean-900);
+  --color-muted-text: var(--color-ocean-300);
+
+  /* Status Colors */
+  --color-impact-red: #ef4444;
+  --color-impact-yellow: #f59e0b;
+  --color-impact-green: #3ADE7A;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+body {
+  @apply bg-ocean-950 text-ocean-50 overflow-x-hidden font-sans;
+}
+
+/* Custom premium scrollbar */
+::-webkit-scrollbar {
+  @apply w-2 h-2;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-ocean-900 border-l border-ocean-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-ocean-700/50 rounded-full hover:bg-ocean-600 transition-colors;
+}
+
+/* Glass panel */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  @apply rounded-xl overflow-hidden shadow-xl;
+}
